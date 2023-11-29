@@ -204,7 +204,9 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    tbl1 = pd.read_csv("tbl1.tsv", sep="\t")
+    grouped = tbl1.groupby('_c0')['_c4'].apply(lambda x: ','.join(sorted(x.astype(str)))).reset_index()
+    return grouped
 
 
 def pregunta_12():
