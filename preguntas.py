@@ -224,7 +224,11 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+    tbl2 = pd.read_csv("tbl2.tsv", sep="\t")
+    tbl2['_c5b'] = tbl2['_c5b'].astype(str)
+    tbl2 = tbl2.sort_values(by='_c5a')
+    grouped = tbl2.groupby('_c0').apply(lambda group: ','.join(group['_c5a'] + ':' + group['_c5b'])).reset_index(name='_c5')
+    return grouped
 
 
 def pregunta_13():
