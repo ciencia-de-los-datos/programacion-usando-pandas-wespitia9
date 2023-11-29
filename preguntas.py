@@ -102,7 +102,11 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    rta = pd.read_csv("tbl1.tsv", sep="\t")
+    mayus = rta['_c4'].str.upper()
+    rta_unicos = mayus.unique()
+    unicos_ordenados = sorted(rta_unicos)
+    return unicos_ordenados
 
 
 def pregunta_07():
