@@ -54,7 +54,9 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+    rta = tbl0._c1.value_counts()
+    rta = rta.sort_index()
+    return rta
 
 
 def pregunta_04():
