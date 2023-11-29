@@ -22,7 +22,9 @@ def pregunta_01():
     40
 
     """
-    return
+    can=tbl0.shape
+    filas=can[0]
+    return filas
 
 
 def pregunta_02():
